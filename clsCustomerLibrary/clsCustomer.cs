@@ -161,8 +161,8 @@ namespace clsCustomerLibrary
             return true;
         }
 
-        
-        public string Valid(string firstName, string lastName, string gender, string homeAddress, string emailAddress, string phoneNo, string DOB)
+
+        public string Valid(string firstName, string lastName, string Gender, string HomeAddress, string EmailAddress, string PhoneNo, string DOB)
         {
             //create a string variable to store the error
             String Error = "";
@@ -175,5 +175,58 @@ namespace clsCustomerLibrary
             //return any error messages
             return Error;
         }
+
+        public bool Valid(string firstName, string lastName, string homeAddress, string phoneNo, string emailAddress, string gender)
+        {
+            //create a string variable to store the error
+            Boolean AllOK = false;
+            //if the FirstName is blank or over the limit
+            if (firstName.Length == 0 || firstName.Length > 25)
+            {
+                //record the error
+                AllOK = false;
+                if (lastName.Length == 0 || lastName.Length > 25)
+                {
+                    //record the error
+                    AllOK = false;
+                    if (homeAddress.Length == 0 || homeAddress.Length > 50)
+                    {
+                        AllOK = false;
+                    }
+                }
+                
+            }
+            else
+            {
+                AllOK = true;
+            }
+            
+           
+            return AllOK;
+        }
+
+
+
+
+        /*
+        public bool FirstNameValid(string firstName, string testData)
+        {
+            //create a string variable to store the error
+            Boolean AllOK = false;
+            //if the FirstName is blank
+            if (testData.Length == 0 || testData.Length > 25)
+            {
+                //record the error
+                AllOK = false;
+            }
+            else
+            {
+                AllOK = true;
+            }
+            return AllOK;
+
+        }
+        */
     }
+
 }

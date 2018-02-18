@@ -376,25 +376,92 @@ namespace tstCustomer
 
         }
 
+        
         [TestMethod]
         public void FirstNameMinLessOne()
         {
             //create an instance of the class we want to create
             clsCustomer ACustomer = new clsCustomer();
             //boolean variable to store the result of the validation
-            Boolean OK = false;
+            Boolean AllOK = false;
             //create some test data to pass to the method
-            string FirstName = "igho"; //this should trigger an error
-            string LastName = "akponah";
-            string Gender = "male";
-            string HomeAddress = "6 Cavendish mews";
-            string EmailAddress = "igho@yahoo.com";
-            string PhoneNo = "0123456789";
-            string DOB = DateTime.Now.Date.ToString();
+            string firstName = ""; //this should fail
+            string lastName = "abcd"; 
+            string homeAddress = "6 cavendish mews";
+            string phoneNo = "0123456789";
+            string emailAddress = "abc@123.com";
+            string gender = "male";
+            
             //invoke the method
-            OK = ACustomer.Valid(FirstName, LastName, Gender, HomeAddress, EmailAddress, PhoneNo, DOB);
+            AllOK = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender);
             //test to see that the result if correct
-            Assert.IsFalse(OK);
+            //set to false as it does not meet req.
+            Assert.IsFalse(AllOK);
         }
+
+        
+        [TestMethod]
+        public void FirstNameMin()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation
+            Boolean AllOK = false;
+            //create some test data to pass to the method
+            string firstName = "A"; //this should pass
+            string lastName = "abcd";
+            string homeAddress = "6 cavendish mews";
+            string phoneNo = "0123456789";
+            string emailAddress = "abc@123.com";
+            string gender = "male";
+
+            //invoke the method
+            AllOK = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender);
+            //test to see that the result if correct
+            //set to false as it does not meet req.
+            Assert.IsTrue(AllOK);
+        }
+
+        
+        [TestMethod]
+        public void FirstNameMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation
+            Boolean AllOK = false;
+            //create some test data to pass to the method
+            string firstName = "AA"; //this should pass
+            string lastName = "abcd";
+            string homeAddress = "6 cavendish mews";
+            string phoneNo = "0123456789";
+            string emailAddress = "abc@123.com";
+            string gender = "male";
+
+            //invoke the method
+            AllOK = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender);
+            //test to see that the result if correct
+            //set to false as it does not meet req.
+            Assert.IsTrue(AllOK);
+        }
+
+        /*
+        [TestMethod]
+        public void FirstNameMax()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation
+            Boolean AllOK = false;
+            //create some test data to pass to the method
+            string TestData = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDE"; //this should FAIL
+
+            //invoke the method
+            AllOK = ACustomer.FirstNameValid(ACustomer.FirstName, TestData);
+            //test to see that the result if correct
+            //this should fail as it is over 25 characters long
+            Assert.IsFalse(AllOK);
+        }
+        */
     }
 }
