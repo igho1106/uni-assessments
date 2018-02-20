@@ -148,7 +148,7 @@ namespace clsCustomerLibrary
         public bool Find(int customerID)
         {
             //set the private data members to the test data value
-            
+
             mHomeAddress = "6 Cavendish Mews";
             mPhoneNo = "0123456789";
             mGender = "male";
@@ -162,7 +162,7 @@ namespace clsCustomerLibrary
         }
 
 
-        public string Valid(string firstName, string lastName, string Gender, string HomeAddress, string EmailAddress, string PhoneNo, string DOB)
+        public string Valid(string firstName, string lastName, string homeAddress, string Gender, string EmailAddress, string PhoneNo, string DOB)
         {
             //create a string variable to store the error
             String Error = "";
@@ -170,40 +170,93 @@ namespace clsCustomerLibrary
             if (firstName.Length == 0)
             {
                 //record the error
-                Error = Error + "The FirstName field must not be blank: ";
+                Error = Error + "The FirstName field must not be blank : ";
+            }
+            //if the first name is more than 25 characters long
+            if (firstName.Length > 26)
+            {
+                //record the error 
+                Error = Error + "FirstName must not be more than 25 characters";
+            }
+            //if lastName is blank
+            if (lastName.Length == 0)
+            {
+                //record the error
+                Error = Error + "The lastName field must not be blank : ";
+            }
+            //if lastName is more than 25 characters long
+            if (lastName.Length > 26)
+            {
+                //record the error 
+                Error = Error + "lastName must not be more than 25 characters";
+            }
+
+            //if homeAddress is blank
+            if (homeAddress.Length < 10)
+            {
+                //record the error
+                Error = Error + "The homeAddress field must not be blank : ";
+            }
+            //if homeAddress is more than 25 characters long
+            if (homeAddress.Length > 51)
+            {
+                //record the error 
+                Error = Error + "homeAddress must not be more than 50 characters";
             }
             //return any error messages
             return Error;
         }
 
+        /*
         public bool Valid(string firstName, string lastName, string homeAddress, string phoneNo, string emailAddress, string gender)
         {
             //create a string variable to store the error
-            Boolean AllOK = false;
+            Boolean FirstNameOK = false;
+            Boolean LastNameOK = false;
+            Boolean HomeAddressOK = false;
             //if the FirstName is blank or over the limit
             if (firstName.Length == 0 || firstName.Length > 25)
             {
-                //record the error
-                AllOK = false;
-                if (lastName.Length == 0 || lastName.Length > 25)
+                
+                FirstNameOK = false;
+                if (lastName.Length == 0)
                 {
                     //record the error
-                    AllOK = false;
+                    LastNameOK = false;
                     if (homeAddress.Length == 0 || homeAddress.Length > 50)
                     {
-                        AllOK = false;
+                        HomeAddressOK = false;
                     }
+                    else
+                    {
+                        HomeAddressOK = true;
+                    }
+                    return HomeAddressOK;
                 }
-                
+                else
+                {
+                    LastNameOK = true;
+                }
+                return LastNameOK;
             }
             else
             {
-                AllOK = true;
+                FirstNameOK = true;
             }
+            return FirstNameOK;
             
-           
-            return AllOK;
         }
+        
+        else
+        {
+            FirstNameOK = true;
+        }
+
+
+        return FirstNameOK;
+        */
+    }
+}
 
 
 
@@ -227,6 +280,5 @@ namespace clsCustomerLibrary
 
         }
         */
-    }
+    
 
-}
