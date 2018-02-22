@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using clsCustomerLibrary;
+using Class_Library;
 
 namespace tstCustomer
 {
@@ -141,10 +141,10 @@ namespace tstCustomer
             //boolean variable to store the result of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            int CustomerID = 1;
+            Int32 CustomerID = 1;
             //invoke the method
             Found = ACustomer.Find(CustomerID);
-            //test to see that the result if correct
+            //test to see that the result is correct
             Assert.IsTrue(Found);
         }
 
@@ -164,6 +164,7 @@ namespace tstCustomer
             //check the customername
             if (ACustomer.CustomerID != 1)
             {
+                OK = false;
                 //test to see that the result is correct
                 Assert.IsTrue(OK);
             }               
@@ -208,7 +209,7 @@ namespace tstCustomer
             Found = ACustomer.Find(CustomerID);
             //check the property
 
-            if (ACustomer.EmailAddress != "igho@yahoo.com")
+            if (ACustomer.EmailAddress != "abc@123.com")
             {
                 OK = false;
             }
@@ -231,7 +232,7 @@ namespace tstCustomer
             Found = ACustomer.Find(CustomerID);
             //check the property
 
-            if (ACustomer.FirstName != "igho")
+            if (ACustomer.FirstName != "John")
             {
                 OK = false;
             }
@@ -254,7 +255,7 @@ namespace tstCustomer
             Found = ACustomer.Find(CustomerID);
             //check the property
 
-            if (ACustomer.LastName != "akponah")
+            if (ACustomer.LastName != "Meyer")
             {
                 OK = false;
             }
@@ -277,7 +278,7 @@ namespace tstCustomer
             Found = ACustomer.Find(CustomerID);
             //check the property
 
-            if (ACustomer.Gender != "male")
+            if (ACustomer.Gender != "Male")
             {
                 OK = false;
             }
@@ -323,7 +324,7 @@ namespace tstCustomer
             Found = ACustomer.Find(CustomerID);
             //check the property
 
-            if (ACustomer.HomeAddress != "6 Cavendish Mews")
+            if (ACustomer.HomeAddress != "9 Millstone Lane")
             {
                 OK = false;
             }
@@ -370,7 +371,7 @@ namespace tstCustomer
             string PhoneNo = "0123456789";
             string DOB = DateTime.Now.Date.ToString();
             //invoke the method
-            Error = ACustomer.Valid(FirstName, LastName, HomeAddress, Gender, EmailAddress, PhoneNo, DOB);
+            Error = ACustomer.Valid(FirstName, LastName, HomeAddress, EmailAddress, Gender, PhoneNo, DOB);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
 
@@ -414,13 +415,13 @@ namespace tstCustomer
             string firstName = "A"; //this should fail
             string lastName = "abcd";
             string homeAddress = "9 Millstone Lane";
-            string phoneNo = "0123456789";
             string emailAddress = "abcd@123.com";
             string gender = "male";
+            string phoneNo = "0123456789";
             string DOB = "11/06/1989";
 
             //invoke the method
-            Error = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender, DOB);
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
             //set to false as it does not meet req.
             Assert.AreEqual(Error, "");
@@ -439,13 +440,13 @@ namespace tstCustomer
             string firstName = "AA"; //this should pass
             string lastName = "abcd";
             string homeAddress = "6 cavendish mews";
-            string phoneNo = "0123456789";
             string emailAddress = "abc@123.com";
             string gender = "male";
+            string phoneNo = "0123456789";
             string DOB = "11/06/1989";
 
             //invoke the method
-            Error = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender, DOB);
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
             //set to false as it does not meet req.
             Assert.AreEqual(Error, "");
@@ -463,13 +464,13 @@ namespace tstCustomer
             string firstName = ""; //this should pass
             string lastName = "A";
             string homeAddress = "6 cavendish mews";
-            string phoneNo = "0123456789";
             string emailAddress = "abc@123.com";
             string gender = "male";
+            string phoneNo = "0123456789";     
             string DOB = "11/06/1989";
             firstName = firstName.PadRight(25, 'A');
             //invoke the method
-            Error = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender, DOB);
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
             //this should pass as it is 25 charaacters long
             Assert.AreEqual(Error, "");
@@ -486,13 +487,13 @@ namespace tstCustomer
             string firstName = "aa"; //this should pass
             string lastName = "bb";
             string homeAddress = "6 cavendish mews";
-            string phoneNo = "0123456789";
             string emailAddress = "abc@123.com";
             string gender = "male";
+            string phoneNo = "0123456789";
             string DOB = "11/06/1989";
             firstName = firstName.PadRight(26, 'A');
             //invoke the method
-            Error = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender, DOB);
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
             //this should fail as it is over 25 characters long
             Assert.AreEqual(Error, "");
@@ -509,13 +510,13 @@ namespace tstCustomer
             string firstName = ""; //this should pass
             string lastName = "abcd";
             string homeAddress = "6 cavendish mews";
-            string phoneNo = "0123456789";
             string emailAddress = "abc@123.com";
             string gender = "male";
+            string phoneNo = "0123456789";
             string DOB = "11/06/1989";
             firstName = firstName.PadRight(24, 'A');
             //invoke the method
-            Error = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender, DOB);
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
             //this should pass as it'll return no error
             Assert.AreEqual(Error, "");
@@ -580,13 +581,13 @@ namespace tstCustomer
             string firstName = "a"; //this should pass
             string lastName = "a";//this should pass
             string homeAddress = "6 cavendish mews";
-            string phoneNo = "0123456789";
             string emailAddress = "abc@123.com";
             string gender = "male";
+            string phoneNo = "0123456789";
             string DOB = "11/06/1989";
 
             //invoke the method
-            Error = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender, DOB);
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
 
             Assert.AreEqual(Error, "");
@@ -604,14 +605,14 @@ namespace tstCustomer
             string firstName = "a"; //this should pass
             string lastName = "a";//this should pass
             string homeAddress = "6 cavendish mews";
-            string phoneNo = "0123456789";
             string emailAddress = "abc@123.com";
             string gender = "male";
+            string phoneNo = "0123456789";
             string DOB = "11/06/1989";
             lastName = lastName.PadRight(25, 'A');
 
             //invoke the method
-            Error = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender, DOB);
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
 
             Assert.AreEqual(Error, "");
@@ -624,19 +625,18 @@ namespace tstCustomer
             clsCustomer ACustomer = new clsCustomer();
             String Error = "";
             //boolean variable to store the result of the validation
-            //Boolean AllOK = false;
             //create some test data to pass to the method
             string firstName = "a"; //this should pass
-            string lastName = "";//this should pass
+            string lastName = "";
             string homeAddress = "6 cavendish mews";
-            string phoneNo = "0123456789";
             string emailAddress = "abc@123.com";
             string gender = "male";
+            string phoneNo = "0123456789";
             string DOB = "11/06/1989";
-            lastName = lastName.PadRight(24, 'A');
+            lastName = lastName.PadRight(24, 'A');//this should pass
 
             //invoke the method
-            Error = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender, DOB);
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
 
             Assert.AreEqual(Error, "");
@@ -676,13 +676,13 @@ namespace tstCustomer
             string firstName = "AA"; //this should pass
             string lastName = "ab";
             string homeAddress = "6 cavendish mews";
-            string phoneNo = "0123456789";
             string emailAddress = "abc@123.com";
             string gender = "male";
+            string phoneNo = "0123456789";            
             string DOB = "11/06/1989";
 
             //invoke the method
-            Error = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender, DOB);
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
             //set to false as it does not meet req.
             Assert.AreEqual(Error, "");
@@ -746,13 +746,13 @@ namespace tstCustomer
             string firstName = "aa"; //this should pass
             string lastName = "abcd";
             string homeAddress = "";
-            string phoneNo = "0123456789";
             string emailAddress = "abc@123.com";
             string gender = "male";
+            string phoneNo = "0123456789";
             string DOB = "11/06/1989";
             homeAddress = homeAddress.PadRight(10, 'A');
             //invoke the method
-            Error = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender, DOB);
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
             //this should fail as it is 100 characters long
             Assert.AreEqual(Error, "");
@@ -769,13 +769,13 @@ namespace tstCustomer
             string firstName = "aa"; //this should pass
             string lastName = "abcd";
             string homeAddress = "";
-            string phoneNo = "0123456789";
             string emailAddress = "abc@123.com";
             string gender = "male";
+            string phoneNo = "0123456789";
             string DOB = "11/06/1989";
             homeAddress = homeAddress.PadRight(11, 'A');
             //invoke the method
-            Error = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender, DOB);
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
             //this should fail as it is 100 characters long
             Assert.AreEqual(Error, "");
@@ -792,13 +792,13 @@ namespace tstCustomer
             string firstName = "aa"; //this should pass
             string lastName = "abcd";
             string homeAddress = "";
-            string phoneNo = "0123456789";
             string emailAddress = "abc@123.com";
             string gender = "male";
+            string phoneNo = "0123456789";
             string DOB = "11/06/1989";
             homeAddress = homeAddress.PadRight(50, 'A');
             //invoke the method
-            Error = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender, DOB);
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
             //this should fail as it is 100 characters long
             Assert.AreEqual(Error, "");
@@ -815,13 +815,13 @@ namespace tstCustomer
             string firstName = "aa"; //this should pass
             string lastName = "abcd";
             string homeAddress = "";
-            string phoneNo = "0123456789";
             string emailAddress = "abc@123.com";
             string gender = "male";
+            string phoneNo = "0123456789";
             string DOB = "11/06/1989";
             homeAddress = homeAddress.PadRight(49, 'A');
             //invoke the method
-            Error = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender, DOB);
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
             //this should fail as it is 100 characters long
             Assert.AreEqual(Error, "");
@@ -838,13 +838,13 @@ namespace tstCustomer
             string firstName = "aa"; //this should pass
             string lastName = "abcd";
             string homeAddress = "";
-            string phoneNo = "0123456789";
             string emailAddress = "abc@123.com";
             string gender = "male";
+            string phoneNo = "0123456789";
             string DOB = "11/06/1989";
             homeAddress = homeAddress.PadRight(51, 'A');
             //invoke the method
-            Error = ACustomer.Valid(firstName, lastName, homeAddress, phoneNo, emailAddress, gender, DOB);
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
             //this should fail as it is 100 characters long
             Assert.AreEqual(Error, "");
@@ -873,5 +873,206 @@ namespace tstCustomer
             Assert.AreNotEqual(Error, "");
         }
 
+        [TestMethod]
+        public void EmailAddressMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string firstName = "aa"; //this should pass
+            string lastName = "abcd";
+            string homeAddress = "";
+            string phoneNo = "0123456789";
+            string emailAddress = "@aol.com";//this should fail
+            string gender = "male";
+            string DOB = "11/06/1989";
+            //invoke the method
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, phoneNo, gender, DOB);
+            //test to see that the result if correct
+            //this should fail as it is 100 characters long
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailAddressMin()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string firstName = "aa"; //this should pass
+            string lastName = "abcd";
+            string homeAddress = "9 Millstone Lane";
+            string emailAddress = "a@aol.com";//this should pass
+            string gender = "male";
+            string phoneNo = "0123456789";
+            string DOB = "11/06/1989";
+            //invoke the method
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
+            //test to see that the result if correct
+            //this should fail as it is 100 characters long
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailAddressMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string firstName = "aa"; //this should pass
+            string lastName = "abcd";
+            string homeAddress = "9 Millstone Lane";
+            string emailAddress = "ab@aol.com";//this should pass
+            string gender = "male";
+            string phoneNo = "0123456789";
+            string DOB = "11/06/1989";
+            //invoke the method
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
+            //test to see that the result if correct
+            //this should fail as it is 100 characters long
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailAddressMax()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string firstName = "aa"; //this should pass
+            string lastName = "abcd";
+            string homeAddress = "9 Millstone Lane";
+            string emailAddress = "ab@aol.com";//this should pass
+            string gender = "male";
+            string phoneNo = "0123456789";
+            string DOB = "11/06/1989";
+            emailAddress = emailAddress.PadRight(50, 'A');
+            //invoke the method
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
+            //test to see that the result if correct
+            //this should fail as it is 100 characters long
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailAddressMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string firstName = "aa"; //this should pass
+            string lastName = "abcd";
+            string homeAddress = "9 Millstone Lane";
+            string emailAddress = "";
+            string gender = "male";
+            string phoneNo = "0123456789";
+            string DOB = "11/06/1989";
+            emailAddress = emailAddress.PadRight(51, 'A');//this should pass
+            //invoke the method
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
+            //test to see that the result if correct
+            //this should fail as it is 100 characters long
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailAddressMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string firstName = "aa"; //this should pass
+            string lastName = "abcd";
+            string homeAddress = "9 Millstone Lane";
+            string emailAddress = "";
+            string gender = "male";
+            string phoneNo = "0123456789";
+            string DOB = "11/06/1989";
+            emailAddress = emailAddress.PadRight(49, 'A');//this should pass
+            //invoke the method
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
+            //test to see that the result if correct
+            //this should fail as it is 100 characters long
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailAddressExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string firstName = "aa"; //this should pass
+            string lastName = "abcd";
+            string homeAddress = "9 Millstone Lane";
+            string phoneNo = "0123456789";
+            string emailAddress = "";
+            string gender = "male";
+            string DOB = "11/06/1989";
+            emailAddress = emailAddress.PadRight(100, 'A');//this should fail
+            //invoke the method
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, phoneNo, gender, DOB);
+            //test to see that the result if correct
+            //this should fail as it is 100 characters long
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenderMax()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string firstName = "aa"; //this should pass
+            string lastName = "abcd";
+            string homeAddress = "9 Millstone Lane";
+            string phoneNo = "0123456789";
+            string emailAddress = "ab@aol.com";//this should pass
+            string gender = "Female";
+            string DOB = "11/06/1989";
+            //invoke the method
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
+            //test to see that the result if correct
+            //this should fail as it is 100 characters long
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void GenderMin()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string firstName = "aa"; //this should pass
+            string lastName = "abcd";
+            string homeAddress = "9 Millstone Lane";
+            string emailAddress = "ab@aol.com";//this should pass
+            string gender = "male";
+            string phoneNo = "0123456789";
+            string DOB = "11/06/1989";
+            //invoke the method
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
+            //test to see that the result if correct
+            //this should fail as it is 100 characters long
+            Assert.AreEqual(Error, "");
+        }
     }
 }
