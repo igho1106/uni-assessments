@@ -226,7 +226,7 @@ namespace Class_Library
                 Error = Error + "homeAddress must not be more than 51 characters";
             }
 
-            //if emailAddress is blank
+            //if emailAddress is blank or less than 9 characters
             if (emailAddress.Length < 9)
             {
                 //record the error
@@ -239,97 +239,33 @@ namespace Class_Library
                 Error = Error + "emailAddress must not be more than 50 characters";
             }
 
-            //if Gender is blank
+            //if Gender is blank or less than 4 characters long
             if (gender.Length < 4)
             {
                 //record the error
                 Error = Error + "The Gender field must not be blank : ";
             }
-            //if gender is more than 7 characters long
+            //if gender is more than 6 characters long
             if (gender.Length > 6)
             {
                 //record the error 
                 Error = Error + "Gender must not be more than 6 characters";
             }
+
+            //if phoneNo is blank or less than 11 digits
+            if (phoneNo.Length < 11)
+            {
+                //record the error
+                Error = Error + "The PhoneNo field must not be blank : ";
+            }
+            //if phoneNo is more than 7 digits long
+            if (phoneNo.Length > 16)
+            {
+                //record the error 
+                Error = Error + "PhoneNo must not be more than 16 characters";
+            }
             //return any error messages
             return Error;
         }
-
-
-        
-
-        /*
-        public bool Valid(string firstName, string lastName, string homeAddress, string phoneNo, string emailAddress, string gender)
-        {
-            //create a string variable to store the error
-            Boolean FirstNameOK = false;
-            Boolean LastNameOK = false;
-            Boolean HomeAddressOK = false;
-            //if the FirstName is blank or over the limit
-            if (firstName.Length == 0 || firstName.Length > 25)
-            {
-                
-                FirstNameOK = false;
-                if (lastName.Length == 0)
-                {
-                    //record the error
-                    LastNameOK = false;
-                    if (homeAddress.Length == 0 || homeAddress.Length > 50)
-                    {
-                        HomeAddressOK = false;
-                    }
-                    else
-                    {
-                        HomeAddressOK = true;
-                    }
-                    return HomeAddressOK;
-                }
-                else
-                {
-                    LastNameOK = true;
-                }
-                return LastNameOK;
-            }
-            else
-            {
-                FirstNameOK = true;
-            }
-            return FirstNameOK;
-            
-        }
-        
-        else
-        {
-            FirstNameOK = true;
-        }
-
-
-        return FirstNameOK;
-        */
     }
 }
-
-
-
-
-/*
- public bool Find(int customerID)
-{
-    //set the private data members to the test data value
-    mCustomerID = 1;
-    mHomeAddress = "6 Cavendish Mews";
-    mPhoneNo = "0123456789";
-    mGender = "male";
-    mLastName = "akponah";
-    mFirstName = "igho";
-    mEmailAddress = "igho@yahoo.com";
-    mDOB = Convert.ToDateTime("11/06/1989");
-    mActive = true;
-    //always return true
-    return true;
-}
-
-}
-*/
-
-

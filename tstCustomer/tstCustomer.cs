@@ -368,7 +368,7 @@ namespace tstCustomer
             string HomeAddress = "9 Millstone Lane";
             string Gender = "male";
             string EmailAddress = "abcd@yahoo.com";
-            string PhoneNo = "0123456789";
+            string PhoneNo = "01234567891";
             string DOB = DateTime.Now.Date.ToString();
             //invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HomeAddress, EmailAddress, Gender, PhoneNo, DOB);
@@ -390,7 +390,7 @@ namespace tstCustomer
             string firstName = ""; //this should fail
             string lastName = "abcd"; 
             string homeAddress = "9 Millstone Lane";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string emailAddress = "abcd@123.com";
             string gender = "male";
             string DOB = "11/06/89";
@@ -417,7 +417,7 @@ namespace tstCustomer
             string homeAddress = "9 Millstone Lane";
             string emailAddress = "abcd@123.com";
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
 
             //invoke the method
@@ -442,7 +442,7 @@ namespace tstCustomer
             string homeAddress = "6 cavendish mews";
             string emailAddress = "abc@123.com";
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
 
             //invoke the method
@@ -466,7 +466,7 @@ namespace tstCustomer
             string homeAddress = "6 cavendish mews";
             string emailAddress = "abc@123.com";
             string gender = "male";
-            string phoneNo = "0123456789";     
+            string phoneNo = "01234567891";     
             string DOB = "11/06/1989";
             firstName = firstName.PadRight(25, 'A');
             //invoke the method
@@ -489,7 +489,7 @@ namespace tstCustomer
             string homeAddress = "6 cavendish mews";
             string emailAddress = "abc@123.com";
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             firstName = firstName.PadRight(26, 'A');
             //invoke the method
@@ -512,7 +512,7 @@ namespace tstCustomer
             string homeAddress = "6 cavendish mews";
             string emailAddress = "abc@123.com";
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             firstName = firstName.PadRight(24, 'A');
             //invoke the method
@@ -533,7 +533,7 @@ namespace tstCustomer
             string firstName = ""; //this should pass
             string lastName = "abcd";
             string homeAddress = "6 cavendish mews";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string emailAddress = "abc@123.com";
             string gender = "male";
             string DOB = "11/06/1989";
@@ -557,7 +557,7 @@ namespace tstCustomer
             string firstName = "a"; //this should pass
             string lastName = "";//this should fail
             string homeAddress = "6 cavendish mews";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string emailAddress = "abc@123.com";
             string gender = "male";
             string DOB = "11/06/1989";
@@ -583,7 +583,7 @@ namespace tstCustomer
             string homeAddress = "6 cavendish mews";
             string emailAddress = "abc@123.com";
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
 
             //invoke the method
@@ -607,7 +607,7 @@ namespace tstCustomer
             string homeAddress = "6 cavendish mews";
             string emailAddress = "abc@123.com";
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             lastName = lastName.PadRight(25, 'A');
 
@@ -631,7 +631,7 @@ namespace tstCustomer
             string homeAddress = "6 cavendish mews";
             string emailAddress = "abc@123.com";
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             lastName = lastName.PadRight(24, 'A');//this should pass
 
@@ -653,7 +653,7 @@ namespace tstCustomer
             string firstName = ""; //this should pass
             string lastName = "";
             string homeAddress = "6 cavendish mews";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string emailAddress = "abc@123.com";
             string gender = "male";
             string DOB = "11/06/1989";
@@ -678,7 +678,7 @@ namespace tstCustomer
             string homeAddress = "6 cavendish mews";
             string emailAddress = "abc@123.com";
             string gender = "male";
-            string phoneNo = "0123456789";            
+            string phoneNo = "01234567891";            
             string DOB = "11/06/1989";
 
             //invoke the method
@@ -699,7 +699,7 @@ namespace tstCustomer
             string firstName = "a"; //this should pass
             string lastName = "abcd";
             string homeAddress = "6 cavendish mews";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string emailAddress = "abc@123.com";
             string gender = "male";
             string DOB = "11/06/1989";
@@ -722,7 +722,7 @@ namespace tstCustomer
             string firstName = "aa"; //this should pass
             string lastName = "abcd";
             string homeAddress = "";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string emailAddress = "abc@123.com";
             string gender = "male";
             string DOB = "11/06/1989";
@@ -748,7 +748,7 @@ namespace tstCustomer
             string homeAddress = "";
             string emailAddress = "abc@123.com";
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             homeAddress = homeAddress.PadRight(10, 'A');
             //invoke the method
@@ -771,7 +771,7 @@ namespace tstCustomer
             string homeAddress = "";
             string emailAddress = "abc@123.com";
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             homeAddress = homeAddress.PadRight(11, 'A');
             //invoke the method
@@ -794,7 +794,7 @@ namespace tstCustomer
             string homeAddress = "";
             string emailAddress = "abc@123.com";
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             homeAddress = homeAddress.PadRight(50, 'A');
             //invoke the method
@@ -817,7 +817,7 @@ namespace tstCustomer
             string homeAddress = "";
             string emailAddress = "abc@123.com";
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             homeAddress = homeAddress.PadRight(49, 'A');
             //invoke the method
@@ -840,7 +840,7 @@ namespace tstCustomer
             string homeAddress = "";
             string emailAddress = "abc@123.com";
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             homeAddress = homeAddress.PadRight(51, 'A');
             //invoke the method
@@ -861,7 +861,7 @@ namespace tstCustomer
             string firstName = "aa"; //this should pass
             string lastName = "abcd";
             string homeAddress = "";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string emailAddress = "abc@123.com";
             string gender = "male";
             string DOB = "11/06/1989";
@@ -884,7 +884,7 @@ namespace tstCustomer
             string firstName = "aa"; //this should pass
             string lastName = "abcd";
             string homeAddress = "";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string emailAddress = "@aol.com";//this should fail
             string gender = "male";
             string DOB = "11/06/1989";
@@ -908,7 +908,7 @@ namespace tstCustomer
             string homeAddress = "9 Millstone Lane";
             string emailAddress = "a@aol.com";//this should pass
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             //invoke the method
             Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
@@ -930,7 +930,7 @@ namespace tstCustomer
             string homeAddress = "9 Millstone Lane";
             string emailAddress = "ab@aol.com";//this should pass
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             //invoke the method
             Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
@@ -952,7 +952,7 @@ namespace tstCustomer
             string homeAddress = "9 Millstone Lane";
             string emailAddress = "ab@aol.com";//this should pass
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             emailAddress = emailAddress.PadRight(50, 'A');
             //invoke the method
@@ -975,7 +975,7 @@ namespace tstCustomer
             string homeAddress = "9 Millstone Lane";
             string emailAddress = "";
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             emailAddress = emailAddress.PadRight(51, 'A');//this should pass
             //invoke the method
@@ -998,7 +998,7 @@ namespace tstCustomer
             string homeAddress = "9 Millstone Lane";
             string emailAddress = "";
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             emailAddress = emailAddress.PadRight(49, 'A');//this should pass
             //invoke the method
@@ -1019,7 +1019,7 @@ namespace tstCustomer
             string firstName = "aa"; //this should pass
             string lastName = "abcd";
             string homeAddress = "9 Millstone Lane";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string emailAddress = "";
             string gender = "male";
             string DOB = "11/06/1989";
@@ -1042,7 +1042,7 @@ namespace tstCustomer
             string firstName = "aa"; //this should pass
             string lastName = "abcd";
             string homeAddress = "9 Millstone Lane";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string emailAddress = "ab@aol.com";//this should pass
             string gender = "Female";
             string DOB = "11/06/1989";
@@ -1066,13 +1066,57 @@ namespace tstCustomer
             string homeAddress = "9 Millstone Lane";
             string emailAddress = "ab@aol.com";//this should pass
             string gender = "male";
-            string phoneNo = "0123456789";
+            string phoneNo = "01234567891";
             string DOB = "11/06/1989";
             //invoke the method
             Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
             //test to see that the result if correct
             //this should fail as it is 100 characters long
             Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMin()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string firstName = "aa"; 
+            string lastName = "abcd";
+            string homeAddress = "9 Millstone Lane";
+            string emailAddress = "ab@aol.com";
+            string gender = "male";
+            string phoneNo = "01234567891";//this should pass
+            string DOB = "11/06/1989";
+            //invoke the method
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
+            //test to see that the result if correct
+            //this should fail as it is 100 characters long
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMax()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string firstName = "aa"; //this should pass
+            string lastName = "abcd";
+            string homeAddress = "9 Millstone Lane";
+            string emailAddress = "ab@aol.com";
+            string gender = "Female";
+            string phoneNo = "01234567891777777";//this should fail
+            string DOB = "11/06/1989";
+            //invoke the method
+            Error = ACustomer.Valid(firstName, lastName, homeAddress, emailAddress, gender, phoneNo, DOB);
+            //test to see that the result if correct
+            //this should fail as it is 100 characters long
+            Assert.AreNotEqual(Error, "");
         }
     }
 }
