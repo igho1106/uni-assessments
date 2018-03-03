@@ -188,6 +188,8 @@ namespace Class_Library
         {
             //create a string variable to store the error
             String Error = "";
+            //temp variable to store date values
+            DateTime DOBTemp;
             //if the FirstName is blank
             if (firstName.Length == 0)
             {
@@ -264,6 +266,26 @@ namespace Class_Library
                 //record the error 
                 Error = Error + "PhoneNo must not be more than 16 characters";
             }
+
+            try
+
+            {
+                //copy the DOB value to the DOBTemp variable
+                DOBTemp = Convert.ToDateTime(DOB);
+                //check to see if DOB is less than 18 years from today
+                if (DOBTemp > DateTime.Now.AddYears(-18))
+                {
+                    //record the error
+                    Error = Error + "You must be 18 years and above to sign up for an account with us : ";
+                }
+            }
+            catch
+            {
+                //record the error
+                Error = Error + "The date was not a valid date";
+            }
+                
+           
             //return any error messages
             return Error;
         }
