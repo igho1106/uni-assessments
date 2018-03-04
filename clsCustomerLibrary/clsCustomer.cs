@@ -184,7 +184,7 @@ namespace Class_Library
         }
 
 
-        public string Valid(string firstName, string lastName, string homeAddress, string emailAddress, string gender, string phoneNo, string DOB)
+        public string Valid(string firstName, string lastName, string homeAddress, string emailAddress, string gender, string phoneNo, string DOB, string postCode)
         {
             //create a string variable to store the error
             String Error = "";
@@ -284,8 +284,20 @@ namespace Class_Library
                 //record the error
                 Error = Error + "The date was not a valid date";
             }
-                
-           
+
+            //if phoneNo is blank or less than 11 digits
+            if (postCode.Length < 6)
+            {
+                //record the error
+                Error = Error + "Please enter a valid PostCode : ";
+            }
+            //if phoneNo is more than 7 digits long
+            if (postCode.Length > 9)
+            {
+                //record the error 
+                Error = Error + "Please enter a valid PostCode : ";
+            }
+
             //return any error messages
             return Error;
         }

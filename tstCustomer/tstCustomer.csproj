@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\clsCustomerLibrary\CustomerLibrary.csproj">
+    <ProjectReference Include="..\clsCustomerLibrary\clsCustomerLibrary.csproj">
       <Project>{02159F20-ECED-41B0-9E86-09704C680605}</Project>
-      <Name>CustomerLibrary</Name>
+      <Name>clsCustomerLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
