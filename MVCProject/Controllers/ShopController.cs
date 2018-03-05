@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MVCProject.Models;
+
 
 namespace MVCProject.Controllers
+
 {
+    
     public class ShopController : Controller
     {
+        private ProductModel _model;
+        public ShopController() { }
+        public ShopController(ProductModel model)
+        {
+            _model = model;
+        }
         // GET: Shop
         public ViewResult Index()
         {
@@ -19,14 +29,41 @@ namespace MVCProject.Controllers
 
         }
 
-        public string Product(string Type, string Colour)
+        public ViewResult Product()
         {
-            return string.Format ("Product Type = {0}, Colour = {1}", Type, Colour);
+       
+            if (_model == null)
+            {
+                _model = new ProductModel();
+                _model.Name = "IPhone 6";
+                _model.Description = "Better than the IPhone 5 etc";
+                _model.Price = 399.99M;
+                
+            }
+            if (_model.Price > 200M)
+            {
+                ViewBag.Subtitle = "Bling!";
+            }
+            else 
+            {
+                ViewBag.Subtitle = "Cheap and nasty product!";
+
+            }
+            return View(_model);
         }
 
+        public string Product(string Type, string Colour)
+        {
+            return string.Format ("Product Type = Trouser {0}, Colour = Blue {1}", Type, Colour);
+        }
 
-
-
-
+        public RedirectResult DVD()
+        {
+            return RedirectPermanent("~/Shop/Product");
+        }
     }
+
+
+
+
 }
