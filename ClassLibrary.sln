@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clsCustomerLibrary", "clsCustomerLibrary\clsCustomerLibrary.csproj", "{02159F20-ECED-41B0-9E86-09704C680605}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tstCustomer", "tstCustomer\tstCustomer.csproj", "{D78C301D-BE92-46FC-ABB0-D200A538EAA2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer Tests", "tstCustomer\Customer Tests.csproj", "{D78C301D-BE92-46FC-ABB0-D200A538EAA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tstCustomerCollection", "tstCustomerCollection\tstCustomerCollection.csproj", "{12C32B83-B473-4905-AB38-4CB35824AE1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerCollection Tests", "tstCustomerCollection\CustomerCollection Tests.csproj", "{12C32B83-B473-4905-AB38-4CB35824AE1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

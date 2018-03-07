@@ -27,7 +27,8 @@ namespace Class_Library
         private string mPhoneNo;
         //private data member for the Active property
         private Boolean mActive;
-
+        //private data member for the PostCode property
+        private string mPostCode;
 
         public bool Active
         {
@@ -149,6 +150,20 @@ namespace Class_Library
                 mPhoneNo = value;
             }
         }
+
+        public string PostCode
+        {
+            get
+            {
+                //return the private data
+                return mPostCode;
+            }
+            set
+            {
+                //set the value of the private data member
+                mPostCode = value;
+            }
+        }
         public bool Find(int customerID)
         {
             //create an instance of the data connection
@@ -170,6 +185,7 @@ namespace Class_Library
                 mPhoneNo = Convert.ToString(DB.DataTable.Rows[0]["PhoneNo"]);
                 mDOB = Convert.ToDateTime(DB.DataTable.Rows[0]["DOB"]);
                 mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
+                mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
 
                 //return that everything worked ok
                 return true;
