@@ -10,11 +10,11 @@ namespace MVCProject.Controllers
 
 {
     
-    public class ShopController : Controller
+    public class MoviesController : Controller
     {
         private ProductModel _model;
-        public ShopController() { }
-        public ShopController(ProductModel model)
+        public MoviesController() { }
+        public MoviesController(ProductModel model)
         {
             _model = model;
         }
