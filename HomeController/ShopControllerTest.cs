@@ -12,7 +12,7 @@ namespace MVCProjectTest
     /// Summary description for ShopControllerTest
     /// </summary>
     [TestClass]
-    public class ShopControllerTest
+    public class MoviesControllerTest
     {
   
 
@@ -21,7 +21,7 @@ namespace MVCProjectTest
         public void IndexWelcomeMessage()
         {
             //Arrange
-            ShopController controller = new ShopController();
+            MoviesController controller = new MoviesController();
 
             //Act
             ViewResult result = controller.Index();
@@ -36,7 +36,7 @@ namespace MVCProjectTest
         public void ProductName()
         {
             //Arrange
-            ShopController controller = new ShopController();
+            MoviesController controller = new MoviesController();
 
             //Act
             ViewResult viewResult = controller.Product();
@@ -52,7 +52,7 @@ namespace MVCProjectTest
         public void ProductIsBling()
         {
             //Arrange
-            ShopController controller = new ShopController();
+            MoviesController controller = new MoviesController();
 
             //Act
             ViewResult result = controller.Product();
@@ -73,7 +73,7 @@ namespace MVCProjectTest
 
             //Inject the controller's dependency on the model so we can test it
 
-            ShopController controller = new ShopController();
+            MoviesController controller = new MoviesController();
 
             //Act
             ViewResult result = controller.Product();
