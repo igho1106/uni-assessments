@@ -9,17 +9,117 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
-        <h1>@ViewBag.Title</h1>
-
-        <p>@ViewBag.WelcomeMessage</p>
-        
-        <h2>@ViewBag.CurrentTime</h2>
-
-        <h2>@ViewData["CurrentTime"]</h2>
-
-
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Find your favorite by search</a>
+            </div>
+            <div>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="The Godfather">
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                    &nbsp;&nbsp;or&nbsp;&nbsp;choose a category&nbsp;&nbsp;
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option value="Action">Action</option>
+                            <option value="Romantic">Romantic</option>
+                            <option value="Science fiction">Science fiction</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-default">Go</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Movie Name here...</h2>
+            <table>
+                <tr>
+                    <td><img src="~/fonts/u=3095982473,2753466102&fm=214&gp=0.jpg" width="80" height="120" /></td>
+                    <td>
+                        <p>
+                            Some Description here....
+                        </p>
+                        <p><a class="btn btn-default" href="">Learn more &raquo;</a></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h2>Movie Name here...</h2>
+            <table>
+                <tr>
+                    <td><img src="~/fonts/u=3095982473,2753466102&fm=214&gp=0.jpg" width="80" height="120" /></td>
+                    <td>
+                        <p>
+                            Some Description here....
+                        </p>
+                        <p><a class="btn btn-default" href="">Learn more &raquo;</a></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h2>Movie Name here...</h2>
+            <table>
+                <tr>
+                    <td><img src="~/fonts/u=3095982473,2753466102&fm=214&gp=0.jpg" width="80" height="120" /></td>
+                    <td>
+                        <p>
+                            Some Description here....
+                        </p>
+                        <p><a class="btn btn-default" href="">Learn more &raquo;</a></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Movie Name here...</h2>
+            <table>
+                <tr>
+                    <td><img src="~/fonts/u=3095982473,2753466102&fm=214&gp=0.jpg" width="80" height="120" /></td>
+                    <td>
+                        <p>
+                            Some Description here....
+                        </p>
+                        <p><a class="btn btn-default" href="">Learn more &raquo;</a></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h2>Movie Name here...</h2>
+            <table>
+                <tr>
+                    <td><img src="~/fonts/u=3095982473,2753466102&fm=214&gp=0.jpg" width="80" height="120" /></td>
+                    <td>
+                        <p>
+                            Some Description here....
+                        </p>
+                        <p><a class="btn btn-default" href="">Learn more &raquo;</a></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h2>Movie Name here...</h2>
+            <table>
+                <tr>
+                    <td><img src="~/fonts/u=3095982473,2753466102&fm=214&gp=0.jpg" width="80" height="120" /></td>
+                    <td>
+                        <p>
+                            Some Description here....
+                        </p>
+                        <p><a class="btn btn-default" href="">Learn more &raquo;</a></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
 </body>
 </html>
 
