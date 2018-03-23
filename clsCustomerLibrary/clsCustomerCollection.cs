@@ -94,9 +94,21 @@ namespace clsCustomerLibrary
         public int Add()
         {
             //adds a new recoord to the dayanase basaed on the values of mThisCustomer
-            mThisCustomer.CustomerID = 4;
-            //return the primaryk key of the new record
-            return mThisCustomer.CustomerID;
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@FirstName", mThisCustomer.FirstName);
+            DB.AddParameter("@LastName", mThisCustomer.LastName);
+            DB.AddParameter("@HomeAddress", mThisCustomer.HomeAddress);
+            DB.AddParameter("@EmailAddress", mThisCustomer.EmailAddress);
+            DB.AddParameter("@Gender", mThisCustomer.Gender);
+            DB.AddParameter("@PhoneNo", mThisCustomer.PhoneNo);
+            DB.AddParameter("@DOB", mThisCustomer.DOB);
+            DB.AddParameter("@Active", mThisCustomer.Active);
+            DB.AddParameter("@PostCode", mThisCustomer.PostCode);
+            
+            //execute query to return the primary key value
+            return DB.Execute("sproc_tblCustomer_Insert");
         }
     }
 
